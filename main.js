@@ -1,21 +1,28 @@
+//This variable is what the map is stored in
 var map;
+//This array stores all the markers
 var markers = new Array();
+//The initialize function centres the map on a certain longitude and latitude
+//It also sets the default zoom and disables the UI
 function initialize() {
-  var centrepoint = new google.maps.LatLng(53.9410509,-3.2284443);
+  var centrepoint = new google.maps.LatLng(0.0000000, 0.0000000);
   var mapOptions = {
-    zoom: 3,
+    zoom: 2,
     center: centrepoint,
 	disableDefaultUI: true
   }
-
+//This draws the map
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   google.maps.event.addListener(map, 'click', addPoint); 
+//This stores the longitude and latitude for the bermuda triangle
   var triangleCoords = [
     new google.maps.LatLng(25.774252, -80.190262),
     new google.maps.LatLng(18.466465, -66.118292),
     new google.maps.LatLng(32.321384, -64.75737),
     new google.maps.LatLng(25.774252, -80.190262)
   ];
+  //All these variables store the longitude and the latitude for the gird boxes
+  //They will be plotted later
   var box1 = [ 
   new google.maps.LatLng(85,-180),
   new google.maps.LatLng(85,-120),
@@ -566,6 +573,7 @@ square7 = new google.maps.Polygon({
   fillOpacity: 0.35,
   clickable: false
   });
+  //Sets the region of the map
   bermudaTriangle.setMap(map);
   square1.setMap(map);
   square2.setMap(map);
@@ -607,7 +615,7 @@ square7 = new google.maps.Polygon({
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
- 
+ //addPoint allows you to place mapMarkers
 function addPoint(event) { 
     var marker = new google.maps.Marker({
         position: event.latLng,
@@ -624,3 +632,5 @@ function addPoint(event) {
  
     });
 }
+
+
