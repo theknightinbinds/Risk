@@ -652,6 +652,8 @@ document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
 yourTurn = false;
 }
 }
+function Update(){
+}
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
 //Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
