@@ -642,13 +642,13 @@ marker_locations.push(event.latLng);
 }
 function endTurn() {
 if (yourTurn == false){
-document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
+document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
 yourTurn = true;
 turn += 1
 document.getElementById("turnNumber").innerHTML = "Turn: " + turn;
 }
 else if (yourTurn == true){
-document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
+document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
 yourTurn = false;
 }
 }
