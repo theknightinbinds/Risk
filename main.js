@@ -9,11 +9,11 @@ function initialize() {
   var mapOptions = {
     zoom: 2,
     center: centrepoint,
-	disableDefaultUI: true
+disableDefaultUI: true
   }
 //This draws the map
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  google.maps.event.addListener(map, 'click', addPoint); 
+  google.maps.event.addListener(map, 'click', addPoint);
 //This stores the longitude and latitude for the bermuda triangle
   var triangleCoords = [
     new google.maps.LatLng(25.774252, -80.190262),
@@ -23,217 +23,217 @@ function initialize() {
   ];
   //All these variables store the longitude and the latitude for the gird boxes
   //They will be plotted later
-  var box1 = [ 
+  var box1 = [
   new google.maps.LatLng(85,-180),
   new google.maps.LatLng(85,-120),
   new google.maps.LatLng(75,-120),
   new google.maps.LatLng(75,-180)
   ];
-   var box2 = [ 
+   var box2 = [
   new google.maps.LatLng(85,-120),
   new google.maps.LatLng(85,-60),
   new google.maps.LatLng(75,-60),
   new google.maps.LatLng(75,-120)
   ];
-   var box3 = [ 
+   var box3 = [
   new google.maps.LatLng(85,-60),
   new google.maps.LatLng(85,-0),
   new google.maps.LatLng(75,-0),
   new google.maps.LatLng(75,-60)
   ];
-  var box4 = [ 
+  var box4 = [
   new google.maps.LatLng(85,-0),
   new google.maps.LatLng(85,60),
   new google.maps.LatLng(75,60),
   new google.maps.LatLng(75,-0)
   ];
-  var box5 = [ 
+  var box5 = [
   new google.maps.LatLng(85,60),
   new google.maps.LatLng(85,120),
   new google.maps.LatLng(75,120),
   new google.maps.LatLng(75,60)
   ];
-  var box6 = [ 
+  var box6 = [
   new google.maps.LatLng(85,120),
   new google.maps.LatLng(85,180),
   new google.maps.LatLng(75,180),
   new google.maps.LatLng(75,120)
   ];
-    var box7 = [ 
+    var box7 = [
   new google.maps.LatLng(75,-180),
   new google.maps.LatLng(75,-120),
   new google.maps.LatLng(45,-120),
   new google.maps.LatLng(45,-180)
   ];
-   var box8 = [ 
+   var box8 = [
   new google.maps.LatLng(75,-120),
   new google.maps.LatLng(75,-60),
   new google.maps.LatLng(45,-60),
   new google.maps.LatLng(45,-120)
   ];
-   var box9 = [ 
+   var box9 = [
   new google.maps.LatLng(75,-60),
   new google.maps.LatLng(75,-0),
   new google.maps.LatLng(45,-0),
   new google.maps.LatLng(45,-60)
   ];
-  var box10 = [ 
+  var box10 = [
   new google.maps.LatLng(75,-0),
   new google.maps.LatLng(75,60),
   new google.maps.LatLng(45,60),
   new google.maps.LatLng(45,-0)
   ];
-  var box11 = [ 
+  var box11 = [
   new google.maps.LatLng(75,60),
   new google.maps.LatLng(75,120),
   new google.maps.LatLng(45,120),
   new google.maps.LatLng(45,60)
   ];
-  var box12 = [ 
+  var box12 = [
   new google.maps.LatLng(75,120),
   new google.maps.LatLng(75,180),
   new google.maps.LatLng(45,180),
   new google.maps.LatLng(45,120)
   ];
-   var box13 = [ 
+   var box13 = [
   new google.maps.LatLng(45,-180),
   new google.maps.LatLng(45,-120),
   new google.maps.LatLng(0,-120),
   new google.maps.LatLng(0,-180)
   ];
-   var box14 = [ 
+   var box14 = [
   new google.maps.LatLng(45,-120),
   new google.maps.LatLng(45,-60),
   new google.maps.LatLng(0,-60),
   new google.maps.LatLng(0,-120)
   ];
-   var box15 = [ 
+   var box15 = [
   new google.maps.LatLng(45,-60),
   new google.maps.LatLng(45,-0),
   new google.maps.LatLng(0,-0),
   new google.maps.LatLng(0,-60)
   ];
-  var box16 = [ 
+  var box16 = [
   new google.maps.LatLng(45,-0),
   new google.maps.LatLng(45,60),
   new google.maps.LatLng(0,60),
   new google.maps.LatLng(0,-0)
   ];
-  var box17 = [ 
+  var box17 = [
   new google.maps.LatLng(45,60),
   new google.maps.LatLng(45,120),
   new google.maps.LatLng(0,120),
   new google.maps.LatLng(0,60)
   ];
-  var box18 = [ 
+  var box18 = [
   new google.maps.LatLng(45,120),
   new google.maps.LatLng(45,180),
   new google.maps.LatLng(0,180),
   new google.maps.LatLng(0,120)
   ];
-   var box19 = [ 
+   var box19 = [
   new google.maps.LatLng(0,-180),
   new google.maps.LatLng(0,-120),
   new google.maps.LatLng(-45,-120),
   new google.maps.LatLng(-45,-180)
   ];
-   var box20 = [ 
+   var box20 = [
   new google.maps.LatLng(0,-120),
   new google.maps.LatLng(0,-60),
   new google.maps.LatLng(-45,-60),
   new google.maps.LatLng(-45,-120)
   ];
-   var box21 = [ 
+   var box21 = [
   new google.maps.LatLng(0,-60),
   new google.maps.LatLng(0,-0),
   new google.maps.LatLng(-45,-0),
   new google.maps.LatLng(-45,-60)
   ];
-  var box22 = [ 
+  var box22 = [
   new google.maps.LatLng(0,-0),
   new google.maps.LatLng(0,60),
   new google.maps.LatLng(-45,60),
   new google.maps.LatLng(-45,-0)
   ];
-  var box23 = [ 
+  var box23 = [
   new google.maps.LatLng(0,60),
   new google.maps.LatLng(0,120),
   new google.maps.LatLng(-45,120),
   new google.maps.LatLng(-45,60)
   ];
-  var box24 = [ 
+  var box24 = [
   new google.maps.LatLng(0,120),
   new google.maps.LatLng(0,180),
   new google.maps.LatLng(-45,180),
   new google.maps.LatLng(-45,120)
   ];
-  var box25 = [ 
+  var box25 = [
   new google.maps.LatLng(-45,-180),
   new google.maps.LatLng(-45,-120),
   new google.maps.LatLng(-75,-120),
   new google.maps.LatLng(-75,-180)
   ];
-   var box26 = [ 
+   var box26 = [
   new google.maps.LatLng(-45,-120),
   new google.maps.LatLng(-45,-60),
   new google.maps.LatLng(-75,-60),
   new google.maps.LatLng(-75,-120)
   ];
-   var box27 = [ 
+   var box27 = [
   new google.maps.LatLng(-45,-60),
   new google.maps.LatLng(-45,-0),
   new google.maps.LatLng(-75,-0),
   new google.maps.LatLng(-75,-60)
   ];
-  var box28 = [ 
+  var box28 = [
   new google.maps.LatLng(-45,-0),
   new google.maps.LatLng(-45,60),
   new google.maps.LatLng(-75,60),
   new google.maps.LatLng(-75,-0)
   ];
-  var box29 = [ 
+  var box29 = [
   new google.maps.LatLng(-45,60),
   new google.maps.LatLng(-45,120),
   new google.maps.LatLng(-75,120),
   new google.maps.LatLng(-75,60)
   ];
-  var box30 = [ 
+  var box30 = [
   new google.maps.LatLng(-45,120),
   new google.maps.LatLng(-45,180),
   new google.maps.LatLng(-75,180),
   new google.maps.LatLng(-75,120)
   ];
-  var box31 = [ 
+  var box31 = [
   new google.maps.LatLng(-75,-180),
   new google.maps.LatLng(-75,-120),
   new google.maps.LatLng(-85,-120),
   new google.maps.LatLng(-85,-180)
   ];
-   var box32 = [ 
+   var box32 = [
   new google.maps.LatLng(-75,-120),
   new google.maps.LatLng(-75,-60),
   new google.maps.LatLng(-85,-60),
   new google.maps.LatLng(-85,-120)
   ];
-   var box33 = [ 
+   var box33 = [
   new google.maps.LatLng(-75,-60),
   new google.maps.LatLng(-75,-0),
   new google.maps.LatLng(-85,-0),
   new google.maps.LatLng(-85,-60)
   ];
-  var box34 = [ 
+  var box34 = [
   new google.maps.LatLng(-75,-0),
   new google.maps.LatLng(-75,60),
   new google.maps.LatLng(-85,60),
   new google.maps.LatLng(-85,-0)
   ];
-  var box35 = [ 
+  var box35 = [
   new google.maps.LatLng(-75,60),
   new google.maps.LatLng(-75,120),
   new google.maps.LatLng(-85,120),
   new google.maps.LatLng(-85,60)
   ];
-  var box36 = [ 
+  var box36 = [
   new google.maps.LatLng(-75,120),
   new google.maps.LatLng(-75,180),
   new google.maps.LatLng(-85,180),
@@ -247,7 +247,7 @@ function initialize() {
     strokeWeight: 2,
     fillColor: '#CC0099',
     fillOpacity: 0.35,
-	clickable: false
+clickable: false
   });
   square1 = new google.maps.Polygon({
   paths: box1,
@@ -611,12 +611,19 @@ square7 = new google.maps.Polygon({
   square34.setMap(map);
   square35.setMap(map);
   square36.setMap(map);
+  
+      
+    //Variables that set up the game
+    var yourTurn = true;
+    var armies = [3, 3];
+    var moves = [5, 5];
 }
+
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
  //addPoint allows you to place mapMarkers
-function addPoint(event) { 
+function addPoint(event) {
     var marker = new google.maps.Marker({
         position: event.latLng,
         map: map,
@@ -633,4 +640,7 @@ function addPoint(event) {
     });
 }
 
-
+function endTurn() {
+	var yourTurn = false;
+	document.getElementById("turnStatus").innerHTML = "Opponents Turn";
+}
