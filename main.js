@@ -1,6 +1,7 @@
 //if ('WebSocket' in window){
 /* WebSocket is supported. You can proceed with your code*/
 //This variable is what the map is stored in
+var i = 0;
 var map;
 //This array stores all the markers
 var markers = new Array();
@@ -644,16 +645,26 @@ function endTurn() {
 if (yourTurn == false){
 document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
 yourTurn = true;
-turn += 1
+turn++;
 document.getElementById("turnNumber").innerHTML = "Turn: " + turn;
 }
 else if (yourTurn == true){
 document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
 yourTurn = false;
 }
+Update();
 }
 function Update(){
+//still haven't sorted this out yet
+/*
+var split = marker_locations[i].split(",");
+var longitude = split[0];
+var latitude = split[1];
+latitude = latitude.slice(")", - 1);
+var lat_row = parseInt(latitude)/60 + 3;
+i++;
 }
+*/
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
 //Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
