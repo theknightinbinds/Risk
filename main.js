@@ -7,6 +7,9 @@ var markers = new Array();
 var marker_locations = new Array();
 var red_territories = new Array();
 var blue_territories = new Array();
+var yourTurn = true;
+var armies = [3, 3];
+var moves = [5, 5];
 //The initialize function centres the map on a certain longitude and latitude
 //It also sets the default zoom and disables the UI
 function initialize() {
@@ -616,10 +619,6 @@ square7 = new google.maps.Polygon({
   square34.setMap(map);
   square35.setMap(map);
   square36.setMap(map);
-   //Variables that set up the game
-    var yourTurn = true;
-    var armies = [3, 3];
-    var moves = [5, 5];
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -643,10 +642,15 @@ function addPoint(event) {
     });
 }
 function endTurn() {
-	var yourTurn = false;
-	document.getElementById("turnStatus").innerHTML = "Opponents Turn";
+if (yourTurn == false){
+	document.getElementById("turnStatus").innerHTML = "|Opponents Turn|";
+	yourTurn = true;
+	}
+else if (yourTurn == true){
+	document.getElementById("turnStatus").innerHTML = "|Your Turn|";
+	yourTurn = false;
 }
-//}
+}
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
 //Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
