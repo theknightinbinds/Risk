@@ -640,17 +640,24 @@ marker_locations.push(event.latLng);
  
     });
 }
+
+//This fucntion increments the turn number and change the player when the end turn button is pressed
 function endTurn() {
 if (yourTurn == false){
-document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
+document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
 yourTurn = true;
+//document.getElementById("gui").style.background-color = red;
 turn += 1
 document.getElementById("turnNumber").innerHTML = "Turn: " + turn;
 }
 else if (yourTurn == true){
-document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
+document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
 yourTurn = false;
 }
+}
+
+function update() {
+	
 }
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
