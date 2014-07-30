@@ -18,14 +18,14 @@ function initialize() {
   var mapOptions = {
     zoom: 2,
     center: centrepoint,
-	disableDefaultUI: true
+disableDefaultUI: true
   }
 //This draws the map
 map = new google.maps.Map(document.getElementById('map'), mapOptions);
 google.maps.event.addListener(map, 'click', addPoint);
 //This stores the longitude and latitude for the bermuda triangle
 var triangleCoords = [
-	new google.maps.LatLng(25.774252, -80.190262),
+new google.maps.LatLng(25.774252, -80.190262),
     new google.maps.LatLng(18.466465, -66.118292),
     new google.maps.LatLng(32.321384, -64.75737),
     new google.maps.LatLng(25.774252, -80.190262)
@@ -256,7 +256,7 @@ bermudaTriangle = new google.maps.Polygon({
     strokeWeight: 2,
     fillColor: '#CC0099',
     fillOpacity: 0.35,
-	clickable: false
+clickable: false
   });
 square1 = new google.maps.Polygon({
   paths: box1,
@@ -382,8 +382,12 @@ square14 = new google.maps.Polygon({
   strokeWeight: 2,
   fillColor: '#99FFFF',
   fillOpacity: 0.35,
+<<<<<<< HEAD
   clickable: false
   });
+=======
+  clickable: false });
+>>>>>>> origin/master
 square15 = new google.maps.Polygon({
   paths: box15,
   strokeColor: '#FF0000',
@@ -643,21 +647,22 @@ google.maps.event.addListener(marker, 'dragend', function() {
 });
 }
 function endTurn() {
-	if (yourTurn == false){
-		document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
-		yourTurn = true;
-		turn++;
-		document.getElementById("turnNumber").innerHTML = "Turn: " + turn;
-	}
-	else if (yourTurn == true){
-		document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
-		yourTurn = false;
-	}
-	Update();
+if (yourTurn == false){
+document.getElementById("turnStatus").innerHTML = "|Blue's Turn|";
+yourTurn = true;
+turn++;
+document.getElementById("turnNumber").innerHTML = "Turn: " + turn;
+}
+else if (yourTurn == true){
+document.getElementById("turnStatus").innerHTML = "|Red's Turn|";
+yourTurn = false;
+}
+Update();
 }
 function Update(){
 //still haven't sorted this out yet
 /*
+<<<<<<< HEAD
 	var split = marker_locations[i].split(",");
 	var longitude = split[0];
 	var latitude = split[1];
@@ -666,8 +671,19 @@ function Update(){
 	i++;
 */
 }
+=======
+var split = marker_locations[i].split(",");
+var longitude = split[0];
+var latitude = split[1];
+latitude = latitude.slice(")", - 1);
+var lat_row = parseInt(latitude)/60 + 3;
+i++;
+*/
+}
+
+>>>>>>> origin/master
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
-	//Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
+//Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
 //}
 
