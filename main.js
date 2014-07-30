@@ -1,3 +1,4 @@
+var errors = 999;
 //if ('WebSocket' in window){
 /* WebSocket is supported. You can proceed with your code*/
 //This variable is what the map is stored in
@@ -382,6 +383,7 @@ square14 = new google.maps.Polygon({
   fillColor: '#99FFFF',
   fillOpacity: 0.35,
   clickable: false
+  });
 square15 = new google.maps.Polygon({
   paths: box15,
   strokeColor: '#FF0000',
@@ -662,8 +664,8 @@ function Update(){
 	latitude = latitude.slice(")", - 1);
 	var lat_row = parseInt(latitude)/60 + 3;
 	i++;
-}
 */
+}
 //else {
 //Websockets is not supported by the browser, proceed to use turn-based system by default
 	//Document.write("Websockets is not supported by your browser, chances are that means that you are using some ghastly, deprecated version of internet explorer. Sucks to be you!");
